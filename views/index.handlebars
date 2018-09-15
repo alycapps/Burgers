@@ -2,6 +2,7 @@
 <ul>
     {{#each burger}}
         {{#unless devoured}}
+              {{this.burger_name}}
         {{/unless}}
     {{/each}}
 </ul>
@@ -10,6 +11,7 @@
 <ul>
     {{#each burger}}
         {{#if devoured}}
+              {{this.burger_name}}
         {{/if}}
     {{/each}}
 </ul>
