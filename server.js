@@ -1,11 +1,11 @@
-var express = require("server");
-var bodyparser = require("body-parser");
+var express = require("express");
+var bodyParser = require("body-parser");
 var path = require("path");
 var exphbs = require("express-handlebars");
 
 //set up express and heroku port option
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3001;
 
 // serve static assets
 app.use(express.static(__dirname + './public'));
