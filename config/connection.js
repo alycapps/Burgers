@@ -1,8 +1,10 @@
 //Connecting node to mySQL
+
 //dependencies
 var mysql = require("mysql");
 var connection;
-//unique info needed for setting up connection
+
+//info for connection setup for Heroku or localhost
 if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 }

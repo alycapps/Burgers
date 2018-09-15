@@ -1,7 +1,11 @@
-<h1>Burger Time!</h1>
-<br>
+{{!-- Header --}}
+<div id="header">
+    <h1>Burger Time!</h1>
+    <br>
+</div>
 
 <div class="container">
+    {{!-- Row 1 Burgers to be eaten and Burgers Eaten --}}
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-5">
@@ -33,6 +37,7 @@
         <div class="col-md-1"></div>
     </div>
 
+    {{!-- Row 2 Add a Burger --}}
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
@@ -49,18 +54,23 @@
     </div>
 </div>
 
+{{!-- Javascript --}}
 <script type="text/javascript">
-    $(".devourbttn").on("click", function(event) {
-        var id = $(this).data("id");
+    $(function() {
+        //function to change devour state to true
+        $(".devourbttn").on("click", function(event) {
+            console.log("devour button clicked");
+            var id = $(this).data("id");
 
-        $.ajax("/burgers/" + id, { 
-        type: "PUT",
-        data: true
-        }).then(
-        function() {
-            console.log("updated ", id);
-            location.reload();
-        }
-        );
+            $.ajax("/burgers/" + id, { 
+            type: "PUT",
+            data: true
+            }).then(
+            function() {
+                console.log("updated ", id);
+                location.reload();
+            }
+            );
+        });
     });
 </script>
