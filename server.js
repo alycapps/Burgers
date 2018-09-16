@@ -8,9 +8,8 @@ var app = express();
 var PORT = process.env.PORT || 3001;
 
 // serve static assets
-// app.use(express.static(__dirname + './public'));
-app.use(express.static("./public"));
-
+// app.use(express.static(__dirname + '/public'));
+app.use(express.static("public"));
 
 //allow express to handle data parsing
 app.use(bodyParser.urlencoded({ extended: true }));
