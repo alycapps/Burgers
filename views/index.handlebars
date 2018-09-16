@@ -39,8 +39,8 @@
 
     {{!-- Row 2 Add a Burger --}}
     <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
             <h2>Add a Burger</h2>
             <form>
                 What burger would you like to add?
@@ -50,7 +50,7 @@
                 <button type="submit button" class="btn btn-warning">Add Burger!</button>
             </form>
         </div>
-        <div class="col-md-3"></div>
+        <div class="col-md-4"></div>
     </div>
 </div>
 
@@ -61,10 +61,10 @@
         $(".devourbttn").on("click", function(event) {
             console.log("devour button clicked");
             var id = $(this).data("id");
-
-            $.ajax("/burgers/" + id, { 
+            var eaten = {devoured: true};
+            $.ajax("/api/burgers/" + id, { 
             type: "PUT",
-            data: true
+            data: eaten
             }).then(
             function() {
                 console.log("updated ", id);

@@ -21,9 +21,9 @@ router.post("/api/burgers", function(req,res) {
 });
     
 //allows user to "devour" a burger aka update boolean string for devour
-router.put("/api/cats/:id", function(req, res) {
+router.put("/api/burgers/:id", function(req, res) {
     var condition = "id = " + req.params.id;
-    burgers.updateOne( {devour: req.body.devour}, condition, function(result) {
+    burgers.updateOne( {devoured: req.body.devoured}, condition, function(result) {
         //return error if no rows changed
         if (result.changedRows === 0) {
             return res.status(404).end();
