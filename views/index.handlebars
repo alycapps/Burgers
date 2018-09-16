@@ -1,5 +1,6 @@
 {{!-- Header --}}
 <div id="header">
+    <br>
     <h1>Burger Time!</h1>
     <br>
 </div>
@@ -8,7 +9,7 @@
     {{!-- Row 1 Burgers to be eaten and Burgers Eaten --}}
     <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-5">
+        <div class="col-md-5 toEat">
             <h2>Burgers to be Eaten</h2>
             <ul>
                 {{#each burgers}}
@@ -22,7 +23,7 @@
             </ul>
         </div>
 
-        <div class="col-md-5">
+        <div class="col-md-5 ate">
             <h2>Burgers that have been Eaten</h2>
             <ul>
                 {{#each burgers}}
@@ -36,11 +37,12 @@
         </div>
         <div class="col-md-1"></div>
     </div>
+    <br>
 
     {{!-- Row 2 Add a Burger --}}
     <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-4">
+        <div class="col-md-4 new">
             <h2>Add a Burger</h2>
             <form>
                 What burger would you like to add?
