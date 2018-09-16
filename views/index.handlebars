@@ -45,9 +45,9 @@
             <form>
                 What burger would you like to add?
                 <br>
-                <input type="text" name="burger_name">
+                <input type="text" id="newBurger">
                 <br>
-                <button type="submit button" class="btn btn-warning">Add Burger!</button>
+                <button type="submit button" class="btn btn-warning addBttn">Add Burger!</button>
             </form>
         </div>
         <div class="col-md-4"></div>
@@ -71,6 +71,21 @@
                 location.reload();
             }
             );
+        });
+
+        $(".addBttn").on("click", function(event) {
+            event.preventDefault();
+            console.log("add button clicked");
+            var newBurger = {burger_name: $("#newBurger").val().trim()};
+
+            $.ajax("/api/burgers/", { 
+                type: "POST",
+                data: newBurger
+            }).then(
+            function() {
+                console.log("new burger created");
+                location.reload();
+            });
         });
     });
 </script>

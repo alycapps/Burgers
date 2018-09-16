@@ -40,12 +40,12 @@ var orm = {
         queryString += " (";
         queryString += cols.toString();
         queryString += ") ";
-        queryString += "VALUES (";
-        queryString += printQuestionMarks(vals.length);
+        queryString += "VALUE (";
+        queryString += "?";
         queryString += ") ";
     
         console.log(queryString);
-    
+        
         connection.query(queryString, vals, function(err, result) {
           if (err) {
             throw err;

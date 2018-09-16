@@ -8,14 +8,14 @@ router.get("/", function(req, res) {
         var BurgersObj = {
             burgers: data
         };
-        console.log(BurgersObj);
+        // console.log(BurgersObj);
         res.render("index", BurgersObj);
     });
 });
 
 //allows user to add a new burger
 router.post("/api/burgers", function(req,res) {
-    burgers.insertOne(req.burger_name, function(result) {
+    burgers.insertOne(req.body.burger_name, function(result) {
         res.json({id: result.insertId});
     });
 });

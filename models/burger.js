@@ -6,8 +6,9 @@ var burgers = {
             cb(res);
         })
     },
-    insertOne: function(value, cb) {
-        orm.insertOne("burgers", burger_name, value, function(res) {
+    insertOne: function(vals, cb) {
+        //UNDEFINED BURGERNAME HERE
+        orm.insertOne("burgers", "burger_name", vals, function(res) {
             cb(res);
         })
     },
